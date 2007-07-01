@@ -1,6 +1,6 @@
 %define module  IPC-Run3
 %define name    perl-%{module}
-%define version 0.036
+%define version 0.037
 %define release %mkrel 1
 
 Name:           %{name}
