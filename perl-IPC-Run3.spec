@@ -15,6 +15,7 @@ Source:         http://www.cpan.org/modules/by-module/IPC/%{module}-%{version}.t
 BuildRequires:  perl-devel
 %endif
 BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 
 %description
