@@ -1,21 +1,21 @@
-%define module  IPC-Run3
-%define name    perl-%{module}
-%define version 0.043
-%define release %mkrel 1
+%define upstream_name    IPC-Run3
+%define upstream_version 0.044
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:        Run a subprocess in batch mode (a la system)
-License:        GPL or Artistic
+License:        GPL+ or Artistic
 Group:          Development/Perl
-URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/IPC/%{module}-%{version}.tar.bz2
+Url:            http://search.cpan.org/dist/%{upstream_name}
+Source0:        http://www.cpan.org/modules/by-module/IPC/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 
 %description
@@ -28,7 +28,7 @@ Various redirection operators reminiscent of those seen on common Unix
 and DOS command lines are provided. 
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 perl -pi -e 's#/usr/local/bin/#%{_bindir}/#' bin/run3profpp
 
 %build
@@ -36,7 +36,7 @@ perl -pi -e 's#/usr/local/bin/#%{_bindir}/#' bin/run3profpp
 %make
 
 %check
-%{__make} test
+%make test
 
 %clean 
 rm -rf %{buildroot}
@@ -50,8 +50,7 @@ chmod 0755 %{buildroot}/%{_bindir}/*
 
 %files
 %defattr(-,root,root)
-%doc Changes
+%doc Changes META.yml
 %{perl_vendorlib}/IPC
 %{_mandir}/*/*
 %{_bindir}/*
-
