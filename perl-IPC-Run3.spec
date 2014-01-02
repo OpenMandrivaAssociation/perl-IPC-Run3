@@ -1,14 +1,14 @@
 %define modname	IPC-Run3
-%define modver	0.044
+%define modver 0.046
 
 Summary:	Run a subprocess in batch mode (a la system)
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	10
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/IPC/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/IPC/IPC-Run3-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl-devel
 
@@ -43,4 +43,5 @@ chmod 0755 %{buildroot}/%{_bindir}/*
 %{_bindir}/*
 %{perl_vendorlib}/IPC
 %{_mandir}/man3/*
+
 
