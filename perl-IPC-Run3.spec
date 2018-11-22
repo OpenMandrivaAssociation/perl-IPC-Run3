@@ -5,10 +5,10 @@ Summary:	Run a subprocess in batch mode (a la system)
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	8
+Release:	9
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		http://metacpan.org/pod/IPC::Run3
 Source0:	http://www.cpan.org/modules/by-module/IPC/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Time::HiRes)
