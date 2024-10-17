@@ -8,7 +8,7 @@ Version:	%perl_convert_version %{modver}
 Release:	11
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://metacpan.org/pod/IPC::Run3
+Url:		https://metacpan.org/pod/IPC::Run3
 Source0:	http://www.cpan.org/modules/by-module/IPC/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Time::HiRes)
