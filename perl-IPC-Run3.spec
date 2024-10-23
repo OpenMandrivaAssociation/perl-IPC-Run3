@@ -5,7 +5,7 @@ Summary:	Run a subprocess in batch mode (a la system)
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	11
+Release:	12
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/IPC::Run3
