@@ -1,15 +1,14 @@
 %define modname	IPC-Run3
-%define modver 0.048
 
 Summary:	Run a subprocess in batch mode (a la system)
 
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	12
+Version:	0.049
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/IPC::Run3
-Source0:	http://www.cpan.org/modules/by-module/IPC/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/IPC/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Time::HiRes)
 BuildRequires:	perl(Test::More)
@@ -26,18 +25,18 @@ Various redirection operators reminiscent of those seen on common Unix
 and DOS command lines are provided. 
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{version}
 perl -pi -e 's#/usr/local/bin/#%{_bindir}/#' bin/run3profpp
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 mkdir -p %{buildroot}/%{_bindir}
 cp bin/* %{buildroot}/%{_bindir}
 chmod 0755 %{buildroot}/%{_bindir}/*
@@ -47,6 +46,3 @@ chmod 0755 %{buildroot}/%{_bindir}/*
 %{_bindir}/*
 %{perl_vendorlib}/IPC
 %{_mandir}/man3/*
-
-
-
