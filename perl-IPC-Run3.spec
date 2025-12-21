@@ -10,6 +10,7 @@ Group:		Development/Perl
 Url:		https://metacpan.org/pod/IPC::Run3
 Source0:	http://www.cpan.org/modules/by-module/IPC/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	perl(Time::HiRes)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Test)
